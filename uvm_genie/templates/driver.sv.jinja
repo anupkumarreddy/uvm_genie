@@ -1,0 +1,19 @@
+/*****************************************************************************************
+   filename: {{ filename }}
+   author  : {{ author }}
+   description: {{ description }}
+******************************************************************************************/
+
+
+class {{ class_name }} extends uvm_driver;
+ `uvm_component_utils(`{{class_name}})
+
+  function new(string name = "{{ class_name }}", uvm_component parent);
+    super.new(name, parent);
+  endfunction : new
+
+  task run_phase(uvm_phase phase);
+    // actual logic goes here.
+  endtask : run_phase
+
+endclass : {{ class_name }}
