@@ -8,6 +8,21 @@ class UvmGenieConfig:
             'templates_path': 'templates',
             'output_path': 'output',
             'components': {
+                'package': {
+                    'filename': 'uart_pkg',
+                    'author': 'anup reddy',
+                    'description': 'This package contains uart uvc',
+                    'package_name': 'uart',
+                    'includes': [
+                        'uart_config',
+                        'uart_driver',
+                        'uart_monitor',
+                        'uart_sequencer',
+                        'uart_agent',
+                        'uart_env'
+                    ],
+                    'template_name': 'package.sv.jinja'
+                },
                 'driver': {
                     'filename': 'my_driver',
                     'author': 'anup reddy',
