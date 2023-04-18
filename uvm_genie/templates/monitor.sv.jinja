@@ -5,16 +5,19 @@
 ******************************************************************************************/
 
 
-class {{ class_name }} extends uvm_driver;
+class {{ class_name }} extends uvm_monitor;
  `uvm_component_utils(`{{class_name}})
 
   function new(string name = "{{ class_name }}", uvm_component parent);
     super.new(name, parent);
   endfunction : new
 
+  virtual void function build_phase(uvm_phase phase);
+    super.build_phase(phase);
+  endfunction : build_phase
+
   task run_phase(uvm_phase phase);
     // actual logic goes here.
   endtask : run_phase
 
 endclass : {{ class_name }}
-
