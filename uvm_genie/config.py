@@ -9,7 +9,7 @@ class UvmGenieConfig:
             'output_path': 'output',
             'components': {
                 'package': {
-                    'filename': 'uart_pkg',
+                    'filename': 'uart',
                     'author': 'anup reddy',
                     'description': 'This package contains uart uvc',
                     'package_name': 'uart',
@@ -23,18 +23,23 @@ class UvmGenieConfig:
                     ],
                     'template_name': 'package.sv.jinja'
                 },
-                'driver': {
-                    'filename': 'my_driver',
+                'interface': {
+                    'filename': 'uart',
                     'author': 'anup reddy',
-                    'class_name': 'FirstDriver',
-                    'description': "this is a simple test description for testing jinja template system",
-                    'template_name': 'driver.sv.jinja'
-                },
-                'monitor': {
-                    'name': 'my_driver',
-                    'vif_name': 'my_vif'
+                    'description': 'This package contains uart interface',
+                    'interface_name': 'uart',
+                    'ports': [
+                        'input uart_clk',
+                        'input uart_reset'
+                    ],
+                    'signals': [
+                        'uart_tx',
+                        'uart_rx',
+                        'uart_s1',
+                        'uart_s2'
+                    ],
+                    'template_name': 'interface.sv.jinja'
                 }
-
             }
         }
 
@@ -46,6 +51,9 @@ class UvmGenieConfig:
     def get_next_component(self):
         component = next(self.component_iter)
         return self.config['components'][component]
+
+    def get_num_components(self):
+        return len(self.config['components'].keys())
 
     def print_configuration(self):
         yaml_string = yaml.dump(self.config)
