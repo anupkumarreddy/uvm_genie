@@ -39,6 +39,13 @@ class UvmGenieConfig:
                         'uart_s2'
                     ],
                     'template_name': 'interface.sv.jinja'
+                },
+                'driver': {
+                    'filename': 'uart_driver',
+                    'author': 'anup reddy',
+                    'description': 'This package contains uart driver',
+                    'class_name': 'uart_driver',
+                    'template_name': 'driver.sv.jinja'
                 }
             }
         }

@@ -1,20 +1,30 @@
 /*****************************************************************************************
-   filename: {{ filename }}
+   filename: {{ filename }}.sv
    author  : {{ author }}
    description: {{ description }}
 ******************************************************************************************/
-
+`ifndef __{{ class_name }}__
+   `define __{{ class_name }}__
 
 class {{ class_name }} extends uvm_driver;
- `uvm_component_utils(`{{class_name}})
+ `uvm_component_utils({{class_name}})
 
   function new(string name = "{{ class_name }}", uvm_component parent);
     super.new(name, parent);
   endfunction : new
+
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+  endfunction : build_phase
 
   task run_phase(uvm_phase phase);
     // actual logic goes here.
   endtask : run_phase
 
 endclass : {{ class_name }}
+
+`endif
+/*****************************************************************************************
+   End of file
+******************************************************************************************/
 
