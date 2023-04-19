@@ -45,7 +45,18 @@ class UvmGenieConfig:
                     'author': 'anup reddy',
                     'description': 'This package contains uart driver',
                     'class_name': 'uart_driver',
+                    'vintf_type': 'uart_intf',
+                    'vintf_name': 'vintf',
                     'template_name': 'driver.sv.jinja'
+                },
+                'monitor': {
+                    'filename': 'uart_monitor',
+                    'author': 'anup reddy',
+                    'description': 'This package contains uart monitor',
+                    'class_name': 'uart_monitor',
+                    'vintf_type': 'uart_intf',
+                    'vintf_name': 'm_vintf',
+                    'template_name': 'monitor.sv.jinja'
                 }
             }
         }

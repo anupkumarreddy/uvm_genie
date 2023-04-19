@@ -7,6 +7,8 @@
    `define __{{ class_name }}__
 
 class {{ class_name }} extends uvm_driver;
+  virtual {{vintf_type}} {{vintf_name}};
+
  `uvm_component_utils({{class_name}})
 
   function new(string name = "{{ class_name }}", uvm_component parent);
