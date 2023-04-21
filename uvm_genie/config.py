@@ -57,6 +57,20 @@ class UvmGenieConfig:
                     'vintf_type': 'uart_intf',
                     'vintf_name': 'm_vintf',
                     'template_name': 'monitor.sv.jinja'
+                },
+                'agent': {
+                    'filename': 'uart_agent',
+                    'author': 'anup reddy',
+                    'description': 'This package contains uart agent',
+                    'class_name': 'uart_agent',
+                    'template_name': 'agent.sv.jinja'
+                },
+                'env': {
+                    'filename': 'uart_env',
+                    'author': 'anup reddy',
+                    'description': 'This package contains uart env',
+                    'class_name': 'uart_env',
+                    'template_name': 'env.sv.jinja'
                 }
             }
         }
