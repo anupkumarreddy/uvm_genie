@@ -9,7 +9,7 @@ class UvmGenieConfig:
             'output_path': 'output',
             'components': {
                 'package': {
-                    'filename': 'uart',
+                    'filename': 'uart_pkg',
                     'author': 'anup reddy',
                     'description': 'This package contains uart uvc',
                     'package_name': 'uart',
@@ -24,7 +24,7 @@ class UvmGenieConfig:
                     'template_name': 'package.sv.jinja'
                 },
                 'interface': {
-                    'filename': 'uart',
+                    'filename': 'uart_intf',
                     'author': 'anup reddy',
                     'description': 'This package contains uart interface',
                     'interface_name': 'uart',
@@ -90,3 +90,6 @@ class UvmGenieConfig:
     def print_configuration(self):
         yaml_string = yaml.dump(self.config)
         print(yaml_string)
+
+    def get_output_path(self):
+        return self.config['output_path']
