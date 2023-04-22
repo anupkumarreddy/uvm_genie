@@ -12,4 +12,6 @@ class UvmGenerator:
         for component in range(num_of_components):
             component = config.get_next_component()
             template = self.environment.get_template(component['template_name'])
-            print(template.render(component))
+            output_file_path = config.get_output_path() + "/" + component['filename'] + ".sv"
+            output_file = open(output_file_path, 'w')
+            output_file.write(template.render(component))
