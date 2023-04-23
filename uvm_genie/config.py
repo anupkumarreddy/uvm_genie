@@ -89,7 +89,11 @@ class UvmGenieConfig:
 
     def print_configuration(self):
         yaml_string = yaml.dump(self.config)
-        print(yaml_string)
+        return yaml_string
+
+    def print_configuration_file(self, config_file):
+        file_handle = open(config_file, 'w')
+        file_handle.write(self.print_configuration())
 
     def get_output_path(self):
         return self.config['output_path']
