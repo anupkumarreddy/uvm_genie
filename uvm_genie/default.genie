@@ -1,0 +1,58 @@
+components:
+  agent:
+    author: anup reddy
+    class_name: uart_agent
+    description: This package contains uart agent
+    filename: uart_agent
+    template_name: agent.sv.jinja
+  driver:
+    author: anup reddy
+    class_name: uart_driver
+    description: This package contains uart driver
+    filename: uart_driver
+    template_name: driver.sv.jinja
+    vintf_name: vintf
+    vintf_type: uart_intf
+  env:
+    author: anup reddy
+    class_name: uart_env
+    description: This package contains uart env
+    filename: uart_env
+    template_name: env.sv.jinja
+  interface:
+    author: anup reddy
+    description: This package contains uart interface
+    filename: uart_intf
+    interface_name: uart
+    ports:
+    - input uart_clk
+    - input uart_reset
+    signals:
+    - uart_tx
+    - uart_rx
+    - uart_s1
+    - uart_s2
+    template_name: interface.sv.jinja
+  monitor:
+    author: anup reddy
+    class_name: uart_monitor
+    description: This package contains uart monitor
+    filename: uart_monitor
+    template_name: monitor.sv.jinja
+    vintf_name: m_vintf
+    vintf_type: uart_intf
+  package:
+    author: anup reddy
+    description: This package contains uart uvc
+    filename: uart_pkg
+    includes:
+    - uart_config
+    - uart_driver
+    - uart_monitor
+    - uart_sequencer
+    - uart_agent
+    - uart_env
+    package_name: uart
+    template_name: package.sv.jinja
+output_path: output
+templates_path: templates
