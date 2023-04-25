@@ -1,4 +1,7 @@
 import yaml
+from yaml.loader import SafeLoader
+
+
 
 
 class UvmGenieConfig:
@@ -77,8 +80,12 @@ class UvmGenieConfig:
 
         self.component_iter = iter(self.config['components'])
 
-    def load_config(self, configuration):
-        self.__dict__.update(configuration)
+    def load_config(self, configuration_file):
+        # Open the file and load the file
+        with open(configuration_file) as file_handle:
+            data = yaml.load(file_handle, Loader=SafeLoader)
+            self.config = data
+
 
     def get_next_component(self):
         component = next(self.component_iter)
