@@ -1,0 +1,24 @@
+/*****************************************************************************************
+   filename: {{ filename }}.sv
+   author  : {{ author }}
+   description: {{ description }}
+******************************************************************************************/
+
+`ifndef __{{ class_name }}__
+   `define __{{ class_name }}__
+
+class {{ class_name }} extends uvm_sequence_item;
+
+ `uvm_object_utils({{class_name}})
+
+  function new(string name = "{{ class_name }}");
+    super.new(name);
+  endfunction : new
+
+endclass : {{ class_name }}
+
+`endif
+/*****************************************************************************************
+   End of file
+******************************************************************************************/
+

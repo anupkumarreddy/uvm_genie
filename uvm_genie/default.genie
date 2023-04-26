@@ -54,5 +54,11 @@ components:
     - uart_env
     package_name: uart
     template_name: package.sv.jinja
+  sequence_item:
+    author: anup reddy
+    class_name: uart_sequence_item
+    description: This package contains uart sequence item
+    filename: uart_sequence_item
+    template_name: sequence_item.sv.jinja
 output_path: output
 templates_path: templates
