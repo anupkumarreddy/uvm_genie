@@ -66,5 +66,11 @@ components:
     description: This package contains uart sequence item
     filename: uart_sequence_item
     template_name: sequence_item.sv.jinja
+  test:
+    author: anup reddy
+    class_name: uart_test
+    description: This package contains uart test
+    filename: uart_test
+    template_name: test.sv.jinja
 output_path: output
 templates_path: templates

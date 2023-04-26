@@ -88,6 +88,13 @@ class UvmGenieConfig:
                     'description': 'This package contains uart sequence',
                     'class_name': 'uart_sequence',
                     'template_name': 'sequence.sv.jinja'
+                },
+                'test': {
+                    'filename': 'uart_test',
+                    'author': 'anup reddy',
+                    'description': 'This package contains uart test',
+                    'class_name': 'uart_test',
+                    'template_name': 'test.sv.jinja'
                 }
             }
         }

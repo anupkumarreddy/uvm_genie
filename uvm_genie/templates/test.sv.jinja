@@ -1,0 +1,38 @@
+/*****************************************************************************************
+   filename: {{ filename }}
+   author  : {{ author }}
+   description: {{ description }}
+******************************************************************************************/
+
+`ifndef __{{ class_name }}__
+   `define __{{ class_name }}__
+
+class {{ class_name }} extends uvm_test;
+ `uvm_component_utils(`{{class_name}})
+
+  function new(string name = "{{ class_name }}", uvm_component parent);
+    super.new(name, parent);
+  endfunction : new
+
+  virtual void function build_phase(uvm_phase phase);
+    super.build_phase(phase);
+  endfunction : build_phase
+
+  virtual void function connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+  endfunction : connect_phase
+
+  virtual task run_phase(uvm_phase phase);
+
+  endtask : run_phase
+
+  virtual task main_phase(uvm_phase phase);
+
+  endtask : main_phase
+
+endclass : {{ class_name }}
+
+`endif
+/*****************************************************************************************
+   End of file
+******************************************************************************************/
